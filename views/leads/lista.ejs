@@ -1,0 +1,37 @@
+<html>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/leadslista.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+<body style="padding:5%">
+
+    <canvas class="line-chart"> </canvas>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Leads capturados pelo aplicativo</div>
+        <table class="table">
+            <tr>
+                <td>CPF</td>
+                <td>Email</td>
+                <td>Valor</td>
+                <td>Setor</td>
+                <td>Idade</td>
+            </tr>
+            
+            <%for(var i=0; i < lista.length; i++) {%>
+                <tr>
+                    <td><%= lista[i].cpf %></td>
+                    <td><%= lista[i].email %></td>
+                    <td class="itemListaValor"><%= lista[i].valor %></td>
+                    <td><%= lista[i].setor %></td>
+                    <td class=" itemListaIdade"><%= lista[i].idade %></td>
+                </tr>
+            <%}%>         
+        </table>
+    </div>
+</body>
+
+<script src="js/leads/lista.js"></script>
+
+</html>
