@@ -25,7 +25,7 @@ MongoClient.connect('mongodb://admin:sportmeadmin@ds025772.mlab.com:25772/sportm
         throw err;
     }
 
-    require('./routes/leads.route.js')(app, db)
     require('./routes/index.route.js')(app);
+    require('./routes/leads.route.js')(app, db);
     console.log('banco de dados conectado')
 });

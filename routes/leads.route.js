@@ -1,9 +1,5 @@
 module.exports = function (app, _db) {
 
-    app.get('/', function (req, res) {
-        res.send('ServerOK!');
-    })
-
     app.get('/leads', function (req, res) {
 
         _db.collection('leads').find().toArray(function (err, result) {
@@ -22,7 +18,6 @@ module.exports = function (app, _db) {
             if (err) {
                 throw err;
             }
-            console.log(result);
             res.send(result);
         });
 
